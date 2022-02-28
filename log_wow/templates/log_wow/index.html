@@ -1,0 +1,49 @@
+{% extends "log_wow/layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+<div class="index_two" id="index">
+    <div class="title_two">
+        <h2>Welcome <strong>{{ user.username|capfirst }}</strong>!</h2>
+        <p>🥳 We are <span>{{ profiles.count }}</span> friends already! 🙌</p>
+    </div>
+
+    <div class="friends_wrapper"> 
+        {% for profile in profiles %}
+       
+        <div class="friends">
+            <div class="avatar">
+                <img src="{{ profile.avatar }}" alt="{{ profile.first_name }}"> 
+            </div>
+            <h6>{{ profile.first_name|capfirst }} {{ profile.last_name|capfirst }}</h6>
+        </div>  
+              
+        {% endfor %}
+    </div>
+    
+</div>
+{% else %}
+
+<div class="index" id="index">
+    <h1>Lo<span>gg</span>er</h1>
+    <h2>Join us and enjoy!</h2>
+
+    <div class="links">
+        <a href="{% url 'register' %}"><button>
+            Register
+        </button></a>
+
+        <a href="{% url 'login' %}"><button>
+            Log in
+        </button></a>
+        
+    </div>
+
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "log_wow/layout.html" %} 
+{% block title %} 
+Register 
+{% endblock %} 
+
+{% block body %}
+<div class="register">
+  <h2>Register and be free!</h2>
+
+  <form action="{% url 'register' %}" method="post" id="form">
+    {% csrf_token %}
+    <div class="form_div">
+      <input type="text" autofocus class="form_item" name="username" placeholder="Username" autocomplete="off" />
+    </div> 
+    <div class="form_div" id="form_div">
+      <input type="text" autofocus id="name" class="form_item" name="first_name" placeholder="First name" autocomplete="off" />
+      <input type="text" autofocus id="name" class="form_item" name="last_name" placeholder="Last name" autocomplete="off" />
+    </div>
+    <div class="form_div">
+      <input type="text" autofocus class="form_item" name="avatar" placeholder="Avatar url" autocomplete="off" />
+    </div>
+    <div class="form_div">
+      <input type="email" autofocus class="form_item" name="email" placeholder="Email address" autocomplete="off" />
+    </div>
+    <div class="form_div">
+      <input type="password" autofocus class="form_item" name="password" placeholder="Password" autocomplete="off" />
+    </div>
+    <div class="form_div">
+      <input type="password" autofocus class="form_item" name="confirmation" placeholder="Confirm Password"
+        autocomplete="off" />
+    </div>
+
+    <input type="submit" value="Register" id="btn_submit" />
+  </form>
+
+  <div style="text-align: center">
+    <p>Already have an account?</p>
+    <a href="{% url 'login' %}">Log In here</a>
+    |
+    <a href="{% url 'index' %}">Back to home</a>
+  </div>
+
+  {% if message %}
+  <div class="msg">{{ message }}</div>
+  {% endif %}
+</div>
+{% endblock %}

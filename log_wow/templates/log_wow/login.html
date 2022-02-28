@@ -1,0 +1,41 @@
+{% extends "log_wow/layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+
+<div class="login register">
+
+  <h2>Login</h2>
+
+  <form action="{% url 'login' %}" method="post" id="form">
+    {% csrf_token %}
+    <div class="form_div">
+      <input type="text" autofocus class="form_item" name="username" placeholder="Username" autocomplete="off" />
+    </div>
+    <div class="form_div">
+      <input type="password" autofocus class="form_item" name="password" placeholder="Password" autocomplete="off" />
+    </div>  
+    <div class="form_div">
+      <input type="submit" value="Login" id="btn_submit" />
+    </div>
+  </form>
+
+  <div style="text-align: center;">
+    <p>Don't have an account?</p>
+    <a href="{% url 'register' %}">Register here</a>
+      |
+    <a href="{% url 'index' %}">Back to home</a>
+  </div>
+
+  {% if message %}
+  <div class="msg">
+      {{ message }}
+  </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}
