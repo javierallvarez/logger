@@ -6,7 +6,8 @@
 - El **código** está relacionado con mis proyectos realizados para el curso "Harvard's CS50 Programming with Python and JavaScript", cuyos repositorios no han sido publicados hasta obtener la evaluación final del curso.  
 
 
-# 🖥 Interfaz {responsive}:  
-![Logger](logger/Logger_1.png)
-![Logger](logger/Logger_2.png)
-![Logger](logger/Logger_3.png)
+## 🖥 Interfaz {responsive}:  
+![Logger](https://github.com/javierallvarez/logger/blob/main/Logger_1.png)
+![Logger](https://github.com/javierallvarez/logger/blob/main/Logger_3.png)
+![Logger](https://github.com/javierallvarez/logger/blob/main/Logger_2.png)
+
